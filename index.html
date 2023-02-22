@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="public/css/Ass1.css" />
+    <script src="public/js/ass1.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Smartest Home</title>
@@ -9,14 +10,15 @@
   <body>
     <main>
       <h1>The Smartest Home</h1>
+      <div class="mytabs">
+      <input type="radio" id="dashboard" name="mytabs" checked="checked">
+      <label for="dashboard"class="tablinks"> Dashboard</label>
       <div class="tab">
-        <button class ="tablinks" onclick="changetab(event, 'Dashboard')">Dashboard</button>
-        <button class ="tablinks" onclick="changetab(event, 'Profile')">Profile</button>
-      </div>
-      <div id="Dashboard" class="dashboard">
+      
       <div>
+        <h3>Dashboard</h3>
         <h2>It is currently:</h2>
-        <h2 id="timedisplay"></h2>
+        <p id="timedisplay"></p>
       </div>
         <div id="box">
        <form id="form" name="form"onsubmit="return validatedashboard()">
@@ -41,7 +43,7 @@
             <option value="Eco"></option>
             <option value="Full"></option>
           </datalist> 
-
+          
         </div>
         <div>
           <label for="Postal Code">Postal Code: </label>
@@ -54,9 +56,11 @@
         </div>
         
         <div>
+          <div id=submits>
           <input type="submit" id="submitdashboard" value="SubmitForm" />
           <input type="button" id="resetdashboard" value="ResetForm" />
-        </div>
+          </div>
+      </div>
       </form>
      </div> 
     </div>
@@ -65,9 +69,11 @@
 
 
 
-     <div id="Profile" class="profile">
+    <input type="radio" id="profile" name="mytabs" >
+    <label for="profile"class="tablinks"> Profile</label>
+    <div class="tab">
       <div>
-        <h2>User Profile</h2>
+        <h3>User Profile</h3>
       </div>
       <div id="box">
       <div>
@@ -82,7 +88,7 @@
         <label>Birthday: </label>
         <input type="text" id="Birthday" name="Birthday" disabled />
       </div>
-       <form id="profileform" name="profileform" onsubmit="return validateprofile()">
+       <form id="profileform" name="profileform" >
       <div>
           <label for="First name">First name:</label>
           <input type="text" id="Firstname" name="Firstname" required/>
@@ -101,23 +107,26 @@
       </div>
       <div>
         <label for="Password">Password:</label>
-        <input type="text" id="Password" name="Password"required/>
+        <input type="password" placeholder="Password" id="password" required>
       </div>
       <div>
         <label for="Passwordconf">Confirm Password:</label>
-        <input type="text" id="Passwordconf" name="Passwordconf"required/>
+        <input type="password" placeholder="Confirm Password" id="confirm_password" required>
       </div>
         <div >
-          <input type="submit" id="submitprofile" value="SubmitProfileForm" />
-          <input type="button" id="resetprofile" value="ResetProfileForm" />
+          <div id=submits>
+          <input type="button" id="submitprofile" value="Submit Form" onclick="validateprofile()"onclick="submitFormReturn();return false;" />
+          <input type="button" id="resetprofile" value="Reset Form" />
+          </div>
         </div>
       </form>
      </div> 
     </div>
+  </div>
 
 
 
     </main>
-    <script src="public/js/ass1.js"></script>
+  
   </body>
 </html>

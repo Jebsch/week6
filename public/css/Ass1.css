@@ -6,29 +6,41 @@ body {
     border: 5px solid black;
     padding: 0 2em 1em;
 }
-.tab {
-    overflow:hidden;
-    border: 1px black;
-    background-color: grey;
-    width: 50%;
-    margin: auto;
+.mytabs{
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin:50px auto;
+
 }
-.tablinks{
-    background-color: inherit;
-    float: left;
-    cursor: pointer;
-    width:50%;
-    padding: 10px;
-    height:40px;
-}
-.dashboard{
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+.mytabs input[type='radio']{
+    display:none
 }
 
-.profile{
-    display: none;
+.mytabs .tab{
+    width: 100%;
+    padding: 20px;
+    order:1;
+    display:none;
+}
+.mytabs input[type='radio']:checked + label + .tab  {
+    display:block;
+}
+.mytabs .tablinks{
+    border: 2px black;
+    background-color: grey;
+    margin: auto;
+    font-weight: bold;
+    float: left;
+    cursor: pointer;
+    width:30%;
+    padding-top: 15px;
+    height:40px;
+    text-align: center;
+}
+
+.tabs{
+  
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
@@ -47,18 +59,40 @@ h2 {
     text-align: center;
     padding-top: 10px;
 }
+h3 {
+    color: black;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+p { color: grey;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+
+}
 div {
     margin-bottom: 1em;
 }
 #box {
     align: center;
-    width: 30%; 
+    width: 70%; 
     margin: auto;
     border: 1px solid black;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+#submits {
+    margin:auto;
+    align: center;
+    width: 50%; 
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 label {
     text-align: right;
@@ -70,6 +104,3 @@ input {
     
 }
 
-span {
-    color: red;
-}
